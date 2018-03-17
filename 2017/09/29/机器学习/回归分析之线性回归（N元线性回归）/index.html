@@ -96,7 +96,7 @@
 	            <a href="#s1">分类</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/夏未眠/">夏未眠</a></li><li><a class="category-link" href="/categories/技术篇/">技术篇</a></li><li><a class="category-link" href="/categories/随手记/">随手记</a>
+	                        <a class="category-link" href="/categories/大数据/">大数据</a></li><li><a class="category-link" href="/categories/机器学习/">机器学习</a></li><li><a class="category-link" href="/categories/编程与系统/">编程与系统</a></li><li><a class="category-link" href="/categories/这夏未眠/">这夏未眠</a></li><li><a class="category-link" href="/categories/随手记/">随手记</a>
 	                    </ul>
 	        </li>
 	        
@@ -138,7 +138,7 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/images/thumbs/ml7.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
                 <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >回归分析之线性回归（N元线性回归）</h2></a>
             </div>
             <!-- Post -->
@@ -189,6 +189,14 @@ y(w,x) = w_{0} + w_{1} z_{1} + w_{2} z_{2} + w_{3} z_{3} + w_{4} z_{4} + w_{5} z
 \frac{1}{N} \sqrt{ \sum_{1}^{n}(y_i - \bar{y})^2 }</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">In [80]: from sklearn import metrics</span><br><span class="line"></span><br><span class="line">In [81]: import numpy as np</span><br><span class="line"></span><br><span class="line">In [82]: true = [10, 5, 3, 2]</span><br><span class="line"></span><br><span class="line">In [83]: pred = [9, 5, 5, 3]</span><br><span class="line"></span><br><span class="line">In [84]: print(&quot;MAE: &quot;, metrics.mean_absolute_error(true,pred))</span><br><span class="line">(&apos;MAE: &apos;, 1.0)</span><br><span class="line"></span><br><span class="line">In [85]: print(&quot;MAE By Hand: &quot;, (1+0+2+1)/4.)</span><br><span class="line">(&apos;MAE By Hand: &apos;, 1.0)</span><br><span class="line"></span><br><span class="line">In [86]: print(&quot;MSE: &quot;, metrics.mean_squared_error(true,pred))</span><br><span class="line">(&apos;MSE: &apos;, 1.5)</span><br><span class="line"></span><br><span class="line">In [87]: print(&quot;MSE By Hand: &quot;, (1 ** 2 + 0 ** 2 + 2 ** 2 + 1 ** 2 ) / 4.)</span><br><span class="line">(&apos;MSE By Hand: &apos;, 1.5)</span><br><span class="line"></span><br><span class="line">In [88]: print(&quot;RMSE: &quot;, np.sqrt(metrics.mean_squared_error(true,pred)))</span><br><span class="line">(&apos;RMSE: &apos;, 1.2247448713915889)</span><br><span class="line"></span><br><span class="line">In [89]: print(&quot;RMSE By Hand: &quot;, np.sqrt((1 ** 2 + 0 ** 2 + 2 ** 2 + 1 ** 2 ) / 4.))</span><br><span class="line">(&apos;RMSE By Hand: &apos;, 1.2247448713915889)</span><br></pre></td></tr></table></figure>
 <hr>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>线性回归在现实中还是可以解决很多问题的，但是并不是万能的，后续我会继续整理逻辑回归，岭回归等相关回归的知识，如果你感觉有用，欢迎分享！</p>
+<hr>
+<center>
+    <img src="/img/gzh.jpg" weight="250px" height="250px">
+    <br>
+打开微信扫一扫，关注微信公众号【数据与算法联盟】
+</center>
+
+
 
             </div>
 
