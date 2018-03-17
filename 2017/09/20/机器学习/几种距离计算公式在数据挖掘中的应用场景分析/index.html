@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="bookmark"  type="image/x-icon"  href="img/favicon.ico"/>
+	<link rel="shortcut icon" href="img/favicon.ico">
+	
+			    <title>
+    文艺与Code | Thinkgamer的博客
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Thinkgamer Hadoop 数据挖掘 机器学习 深度学习 IT网站 博客" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Thinkgamer</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/夏未眠/">夏未眠</a></li><li><a class="category-link" href="/categories/技术篇/">技术篇</a></li><li><a class="category-link" href="/categories/随手记/">随手记</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/cooperation/" title="商务合作">
+		                商务合作
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/thinkgamer" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >几种距离计算公式在数据挖掘中的应用场景分析</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>本文涉及以下几种距离计算公式的分析，参考资料为《面向程序员的数据挖掘指南》</p>
+<ul>
+<li>曼哈顿距离</li>
+<li>欧几里得距离</li>
+<li>闵可夫斯基距离</li>
+<li>皮尔逊相关系数</li>
+<li>余弦相似度</li>
+</ul>
+<a id="more"></a>
+<p>之前整理过一篇关于距离相关的文章：<a href="">机器学习算法中的距离和相似性计算公式，分析以及python实现</a></p>
+<h1 id="闵可夫斯基距离"><a href="#闵可夫斯基距离" class="headerlink" title="闵可夫斯基距离"></a>闵可夫斯基距离</h1><p>两个n维变量a(x11,x12,…,x1n)与 b(x21,x22,…,x2n)间的闵可夫斯基距离定义为：</p>
+<script type="math/tex; mode=display">\sqrt[p]{ \sum_{k=1}^{n} \left | x_{1k}-x_{2k} \right |^p}</script><p>其中p是一个变参数。</p>
+<p>当p=1时，就是曼哈顿距离</p>
+<p>当p=2时，就是欧氏距离</p>
+<p>当p→∞时，就是切比雪夫距离</p>
+<p>根据变参数的不同，闵氏距离可以表示一类的距离。</p>
+<p>p值越大，单个维度的差值大小会对整体距离有更大的影响</p>
+<h1 id="曼哈顿距离／欧几里得距离的瑕疵"><a href="#曼哈顿距离／欧几里得距离的瑕疵" class="headerlink" title="曼哈顿距离／欧几里得距离的瑕疵"></a>曼哈顿距离／欧几里得距离的瑕疵</h1><p>在《面向程序员的数据挖掘指南》中给出了这样一组样例数据, 下图为一个在线音乐网站的的用户评分情况，用户可以用1-5星来评价一个乐队，下边是8位用户对8个乐队的评价：<br><img src="http://img.blog.csdn.net/20170920102356159?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvR2FtZXJfZ3l0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>表中的横线表示用户没有对乐队进行评价，我们在计算两个用户的距离时，只采用他们都评价过的乐队。</p>
+<p>现在来求Angelica和Bill的距离，因为他们共同评分过的乐队有5个，所以使用其对该5个乐队的评分进行曼哈顿距离的计算为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dis_1 = |3.5-2| + |2-3.5| + |5-2| + |1.5-3.5| + |2-3| = 9</span><br></pre></td></tr></table></figure>
+<p>同样使用欧式距离计算为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dis_2 = sqrt( (3.5-2)^2 + (2-3.5)^2 + (5-2)^2 + (1.5-3.5)^2 + (2-3)^2 ) = 4.3</span><br></pre></td></tr></table></figure></p>
+<p>当对Angelica和Bill，Bill和Chan进行距离对比时，由于两者的共同评分过的乐队均为5，数据都在一个5维空间里，是公平的，如果现在要计算Angelica和Hailey与Bill的距离时，会发现，Angelica与Bill共同评分的有5个乐队，Hailey与Bill共同评分的有3个乐队，也就是说两者数据一个在5维空间里，一个在三维空间里，这样明显是不公平的。这将会对我们进行计算时产生不好的影响，所以曼哈顿距离和欧几里得距离在数据完整的情况下效果最好。</p>
+<hr>
+<h1 id="用户问题／皮尔逊相关系数／分数膨胀"><a href="#用户问题／皮尔逊相关系数／分数膨胀" class="headerlink" title="用户问题／皮尔逊相关系数／分数膨胀"></a>用户问题／皮尔逊相关系数／分数膨胀</h1><h2 id="现象——用户问题"><a href="#现象——用户问题" class="headerlink" title="现象——用户问题"></a>现象——用户问题</h2><p>仔细观察用户对乐队的评分数据，可以发现每个用户的评分标准不同：</p>
+<ul>
+<li>Bill没有打出极端的分数，都在2-4分之间</li>
+<li>Jordyn似乎喜欢所有的乐队，打分都在4-5之间</li>
+<li>Hailey是一个有趣的人，他的评分不是1就是4</li>
+</ul>
+<p>那么如何比较这些用户呢？比如说Hailey的4分是相当于Jordyn的4分还是5分呢？我觉得更接近5分，这样一来，就影响推荐系统的准确性了！</p>
+<h2 id="解决该现象"><a href="#解决该现象" class="headerlink" title="解决该现象"></a>解决该现象</h2><p>解决该现象的办法之一就是 使用皮尔逊相关系数，例如下边这样的数据样例（Clara和Robert对五个乐队的评分）：</p>
+<p><img src="http://img.blog.csdn.net/20170920111425007?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvR2FtZXJfZ3l0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>这种现象在数据挖掘领域被称为“分数膨胀“。我们将其评分画成图，如下：<br><img src="http://img.blog.csdn.net/20170920112804525?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvR2FtZXJfZ3l0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>一条直线-完全吻合，代表着Clara和Robert的喜好完全一致。</p>
+<p>皮尔逊相关系数用于衡量两个变量之间的相关性，他的值在-1～1，1代表完全一致，-1代表完全相悖。所以我们可以利用皮尔逊相关系数来找到相似的用户。</p>
+<p>皮尔逊相关系数的计算公式为：<br><img src="http://img.blog.csdn.net/20170920114015874?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvR2FtZXJfZ3l0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>该公式除了看起来比较复杂，另外需要对数据进行两次遍历，第一次遍历求出 x平均值和y平均值，第二次遍历才能出现结果，这里提供另外一个计算公式，能够计算皮尔逊相关系数的近似值：<br><img src="http://img.blog.csdn.net/20170920114326883?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvR2FtZXJfZ3l0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<hr>
+<h1 id="余弦相似度／稀疏数据"><a href="#余弦相似度／稀疏数据" class="headerlink" title="余弦相似度／稀疏数据"></a>余弦相似度／稀疏数据</h1><p>假设这样一个数据集，一个在线音乐网站，有10000w首音乐（这里不考虑音乐类型，年代等因素），每个用户常听的也就其中的几十首，这种情况下使用曼哈顿或者欧几里得或者皮尔逊相关系数进行计算用户之间相似性，计算相似值会非常小，因为用户之间的交集本来就很少，这样对于计算结果来讲是很不准确的，这个时候就需要余弦相似度了，余弦相似度进行计算时会自动略过这些非零值。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>这里只是简答的介绍了这几种相似性距离度量的方法和场景，但是在实际环境中远比这个复杂许多。这里总结下：</p>
+<ul>
+<li>如果数据存在“分数膨胀“问题，就使用皮尔逊相关系数</li>
+<li>如果数据比较密集，变量之间基本都存在共有值，且这些距离数据都是非常重要的，那就使用欧几里得或者曼哈顿距离</li>
+<li>如果数据是稀疏的，就使用余弦相似度</li>
+</ul>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2017/09/20/机器学习/几种距离计算公式在数据挖掘中的应用场景分析/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2017/09/20/机器学习/几种距离计算公式在数据挖掘中的应用场景分析/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+
+
+
+ 	
+</html>

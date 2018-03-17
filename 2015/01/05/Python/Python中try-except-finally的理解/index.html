@@ -1,0 +1,292 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="bookmark"  type="image/x-icon"  href="img/favicon.ico"/>
+	<link rel="shortcut icon" href="img/favicon.ico">
+	
+			    <title>
+    文艺与Code | Thinkgamer的博客
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Thinkgamer Hadoop 数据挖掘 机器学习 深度学习 IT网站 博客" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Thinkgamer</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/夏未眠/">夏未眠</a></li><li><a class="category-link" href="/categories/技术篇/">技术篇</a></li><li><a class="category-link" href="/categories/随手记/">随手记</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/cooperation/" title="商务合作">
+		                商务合作
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/thinkgamer" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Python中try...except...finally的理解</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>首先我们打开一个不存在的文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fp = open(&quot;null.txt&quot;,&quot;r&quot;)</span><br></pre></td></tr></table></figure>
+<p>然后提示报错如下：</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">IOErro Traceback (most recent call last)  </span><br><span class="line">&lt;ipython-input-3-f70973547c7e&gt; in &lt;module&gt;()  </span><br><span class="line">----&gt; 1 fp = open(&quot;null.txt&quot;,&quot;r&quot;)  </span><br><span class="line">  </span><br><span class="line">IOError: [Errno 2] No such file or directory: &apos;null.txt&apos;</span><br></pre></td></tr></table></figure>
+<p>接着我们使用try…except…来执行这条语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">In [4]: try:  </span><br><span class="line">   ...:     fp = open(&quot;null.txt&quot;,&quot;r&quot;)  </span><br><span class="line">   ...: except:  </span><br><span class="line">   ...:     print &quot;open error&quot;  </span><br><span class="line">   ...:       </span><br><span class="line">open error</span><br></pre></td></tr></table></figure>
+<p>接着我们再在后面加一条finally语句，所谓的filally就是最后要执行的，它不管你前边是否发送错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">In [4]: try:  </span><br><span class="line">   ...:     fp =open(&apos;null.txt&apos;,&apos;r&apos;)  </span><br><span class="line">   ...: except:  </span><br><span class="line">   ...:     print &apos;opoen error&apos;  </span><br><span class="line">   ...: finally:  </span><br><span class="line">   ...:     print &apos;end&apos;  </span><br><span class="line">   ...:       </span><br><span class="line">opoen error  </span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<p>接着我们使用except打印出错误类型，然后观察错误的type</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">In [5]: try:  </span><br><span class="line">   ...:     fp = open(&apos;null.txt&apos;,&apos;r&apos;)  </span><br><span class="line">   ...: except Exception,e:  </span><br><span class="line">   ...:     print e  </span><br><span class="line">   ...:     print type(e)  </span><br><span class="line">   ...:       </span><br><span class="line">[Errno 2] No such file or directory: &apos;null.txt&apos;  </span><br><span class="line">&lt;type &apos;exceptions.IOError&apos;&gt;</span><br></pre></td></tr></table></figure>
+<p>我们可以看到except把错误捕捉到赋值给e，然后将其打印出，可以看到为IOError，所以在这里我们可以修改上边为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">In [9]: try:  </span><br><span class="line">   ...:     fp = open(&apos;null.txt&apos;, &apos;r&apos;)  </span><br><span class="line">   ...: except IOError,e:  </span><br><span class="line">   ...:     print &quot;ioerror&quot;  </span><br><span class="line">   ...:       </span><br><span class="line">ioerror</span><br></pre></td></tr></table></figure></p>
+<p>当然这里如果不是IOError的话，上边except语句是捕捉不到的，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">In [10]: try:  </span><br><span class="line">   ....:     a = 10/0  </span><br><span class="line">   ....: except IOError,e:  </span><br><span class="line">   ....:     print &quot;ioerror&quot;  </span><br><span class="line">   ....:       </span><br><span class="line">---------------------------------------------------------------------------  </span><br><span class="line">ZeroDivisionError                         Traceback (most recent call last)  </span><br><span class="line">&lt;ipython-input-10-e17eff88239d&gt; in &lt;module&gt;()  </span><br><span class="line">      1 try:  </span><br><span class="line">----&gt; 2     a = 10/0  </span><br><span class="line">      3 except IOError,e:  </span><br><span class="line">      4     print &quot;ioerror&quot;  </span><br><span class="line">      5   </span><br><span class="line">  </span><br><span class="line">ZeroDivisionError: integer division or modulo by zero</span><br></pre></td></tr></table></figure>
+<p>这时我们需要另外的错误类型进行捕获，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">In [11]: try:  </span><br><span class="line">   ....:     a = 10/0  </span><br><span class="line">   ....: except IOError,e:  </span><br><span class="line">   ....:     print &quot;IOError&quot;  </span><br><span class="line">   ....: except ZeroDivisionError,e:  </span><br><span class="line">   ....:     print &quot;Zero Error&quot;  </span><br><span class="line">   ....:       </span><br><span class="line">Zero Error</span><br></pre></td></tr></table></figure></p>
+<p>可以看到第一个except并没有捕捉到错误，所以传给下一个except，当然如果所有的except都没有捕获到的话，程序就会抛出异常<br>在这里我们不得不注意的是，python的错误类型其实都是class，所有的错误类型都继承自BaseException，所以在使用except时需要注意的是，它不但捕获该类型的错误，还把其子类也“一网打尽”。比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">In [14]: try:  </span><br><span class="line">   ....:     a = 10 /0  </span><br><span class="line">   ....: except StandardError,e:  </span><br><span class="line">   ....:     print &apos;standardError&apos;  </span><br><span class="line">   ....: except ZeroDivisionError,e:  </span><br><span class="line">   ....:     print &apos;zero error&apos;  </span><br><span class="line">   ....:       </span><br><span class="line">standardError</span><br></pre></td></tr></table></figure></p>
+<p>第二个except永远也捕获不到ValueError，因为ZeroDivisionError是StandardError的子类，如果有，也被第一个except给捕获了。<br>使用try…except…finally的另外一个好处是，可以跨越多层调用，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">In [15]: def foo(m):  </span><br><span class="line">   ....:     return 10/int(m)  </span><br><span class="line">   ....:   </span><br><span class="line">  </span><br><span class="line">In [16]: def goo():  </span><br><span class="line">   ....:     a = &quot;0&quot;  </span><br><span class="line">   ....:     foo(a)  </span><br><span class="line">   ....:       </span><br><span class="line">  </span><br><span class="line">In [17]: def main():  </span><br><span class="line">   ....:     goo()  </span><br><span class="line">   ....:       </span><br><span class="line">  </span><br><span class="line">In [18]: try:  </span><br><span class="line">   ....:     main()  </span><br><span class="line">   ....: except Exception,e:  </span><br><span class="line">   ....:     print e  </span><br><span class="line">   ....:       </span><br><span class="line">integer division or modulo by zero</span><br></pre></td></tr></table></figure>
+<p>在foo()函数中抛出的错误，然而在goo和main函数中都没有进行捕捉，在执行main函数时进行捕获，也可以捕获到</p>
+<p>除了try…except…finally之外还有python的logging模块，也可以进行错误调试，当然我们也可以使用raise抛出异常</p>
+<hr>
+<center>
+    <img src="http://img.blog.csdn.net/20171231111930492?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvR2FtZXJfZ3l0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+    <br>
+打开微信扫一扫，关注公众号【数据与算法联盟】
+</center>
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2015/01/05/Python/Python中try-except-finally的理解/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2015/01/05/Python/Python中try-except-finally的理解/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+
+
+
+ 	
+</html>

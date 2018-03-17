@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="bookmark"  type="image/x-icon"  href="img/favicon.ico"/>
+	<link rel="shortcut icon" href="img/favicon.ico">
+	
+			    <title>
+    文艺与Code | Thinkgamer的博客
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Thinkgamer Hadoop 数据挖掘 机器学习 深度学习 IT网站 博客" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Thinkgamer</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/夏未眠/">夏未眠</a></li><li><a class="category-link" href="/categories/技术篇/">技术篇</a></li><li><a class="category-link" href="/categories/随手记/">随手记</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/cooperation/" title="商务合作">
+		                商务合作
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/thinkgamer" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >数据结构算法之二叉树</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>数据结构面试中经常会被问到篇二叉树相关的问题，那么这篇文章会研究下怎么用python来进行二叉树的构建和遍历。</p>
+<a id="more"></a>
+<p>注意：py2中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print root.elem,</span><br></pre></td></tr></table></figure></p>
+<p>在py3中要换成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print (root.elem,end=&quot;  &quot;)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br></pre></td><td class="code"><pre><span class="line"># coding:utf-8</span><br><span class="line"></span><br><span class="line"># 定义节点类</span><br><span class="line">class Node:</span><br><span class="line">    def __init__(self,elem = -1,):</span><br><span class="line">        self.elem = elem</span><br><span class="line">        self.left = None</span><br><span class="line">        self.right = None</span><br><span class="line">        </span><br><span class="line"># 定义二叉树</span><br><span class="line">class Tree:</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.root = Node()</span><br><span class="line">        self.myqu = []</span><br><span class="line">    </span><br><span class="line">    # 添加节点</span><br><span class="line">    def add(self,elem):</span><br><span class="line">        node = Node(elem)</span><br><span class="line">        if self.root.elem == -1:         # 判断如果是根节点</span><br><span class="line">            self.root  = node</span><br><span class="line">            self.myqu.append(self.root)</span><br><span class="line">        else:</span><br><span class="line">            treenode = self.myqu[0]</span><br><span class="line">            if treenode.left == None:</span><br><span class="line">                treenode.left = node</span><br><span class="line">                self.myqu.append(treenode.left)</span><br><span class="line">            else:</span><br><span class="line">                treenode.right = node</span><br><span class="line">                self.myqu.append(treenode.right)</span><br><span class="line">                self.myqu.pop(0)</span><br><span class="line">        </span><br><span class="line">    # 利用递归实现树的先序遍历</span><br><span class="line">    def xianxu(self,root):</span><br><span class="line">        if root == None:</span><br><span class="line">            return</span><br><span class="line">        print root.elem,</span><br><span class="line">        self.xianxu(root.left)</span><br><span class="line">        self.xianxu(root.right)</span><br><span class="line">        </span><br><span class="line">    # 利用递归实现树的中序遍历</span><br><span class="line">    def zhongxu(self,root):</span><br><span class="line">        if root == None:</span><br><span class="line">            return </span><br><span class="line">        self.zhongxu(root.left)</span><br><span class="line">        print root.elem,</span><br><span class="line">        self.zhongxu(root.right)</span><br><span class="line">        </span><br><span class="line">    # 利用递归实现树的后序遍历</span><br><span class="line">    def houxu(self,root):</span><br><span class="line">        if root == None:</span><br><span class="line">            return </span><br><span class="line">        self.houxu(root.left)</span><br><span class="line">        self.houxu(root.right)</span><br><span class="line">        print root.elem,</span><br><span class="line">    </span><br><span class="line">    # 利用队列实现层次遍历</span><br><span class="line">    def cengci(self,root):</span><br><span class="line">        if root == None:</span><br><span class="line">            return</span><br><span class="line">        myq = []</span><br><span class="line">        node = root</span><br><span class="line">        myq.append(node)</span><br><span class="line">        while myq:</span><br><span class="line">            node = myq.pop(0)</span><br><span class="line">            print node.elem,</span><br><span class="line">            if node.left != None:</span><br><span class="line">                myq.append(node.left)</span><br><span class="line">            if node.right != None:</span><br><span class="line">                myq.append(node.right)</span><br><span class="line">    </span><br><span class="line">    # 求树的叶子节点</span><br><span class="line">    def getYeJiedian(self,root):</span><br><span class="line">        if root == None:</span><br><span class="line">            return 0</span><br><span class="line">        if root.left == None and root.right == None:</span><br><span class="line">            return 1</span><br><span class="line"></span><br><span class="line">        return self.getYeJiedian(root.left) + self.getYeJiedian(root.right)</span><br><span class="line"></span><br><span class="line">    # 由先序和中序,还原二叉树</span><br><span class="line">    def preMidToHou(self,pre,mid):</span><br><span class="line">        if len(pre)==0:</span><br><span class="line">            return None</span><br><span class="line">        if len(pre)==1:</span><br><span class="line">            Node(mid[0])</span><br><span class="line">        root = Node(pre[0])</span><br><span class="line">        root_index = mid.index(pre[0])</span><br><span class="line">        root.left = self.preMidToHou(pre[1:root_index + 1],mid[:root_index])</span><br><span class="line">        root.right = self.preMidToHou(pre[root_index + 1:],mid[root_index + 1:])</span><br><span class="line">        return root</span><br><span class="line"></span><br><span class="line">    # 由后序和中序,还原二叉树</span><br><span class="line">    def preMidToHou(self,mid,hou):</span><br><span class="line">        if len(hou)==0:</span><br><span class="line">            return None</span><br><span class="line">        if len(hou)==1:</span><br><span class="line">            Node(mid[0])</span><br><span class="line">        root = Node(hou[-1])</span><br><span class="line">        root_index = mid.index(hou[-1])</span><br><span class="line">        root.left = self.preMidToHou(mid[:root_index],hou[:root_index])</span><br><span class="line">        root.right = self.preMidToHou(mid[root_index + 1:],mid[root_index + 1:])</span><br><span class="line">        return root</span><br><span class="line"></span><br><span class="line"># 创建一个树，添加节点</span><br><span class="line">tree = Tree()</span><br><span class="line">for i in range(10):</span><br><span class="line">    tree.add(i)</span><br><span class="line">    </span><br><span class="line">print(&quot;二叉树的先序遍历:&quot;)</span><br><span class="line">print(tree.xianxu(tree.root))</span><br><span class="line"></span><br><span class="line">print(&quot;二叉树的中序遍历:&quot;)</span><br><span class="line">print(tree.zhongxu(tree.root))</span><br><span class="line"></span><br><span class="line">print(&quot;二叉树的后序遍历:&quot;)</span><br><span class="line">print(tree.houxu(tree.root))</span><br><span class="line"></span><br><span class="line">print(&quot;二叉树的层次遍历&quot;)</span><br><span class="line">print(tree.cengci(tree.root))</span><br><span class="line"></span><br><span class="line">print(&quot;\n二叉树的叶子节点为:&quot;)</span><br><span class="line">print(tree.getYeJiedian(tree.root))</span><br><span class="line"></span><br><span class="line">print(&quot;\n已知二叉树先序遍历和中序遍历，求后序:&quot;)</span><br><span class="line">print(&quot;先序:&quot;)</span><br><span class="line">print(tree.xianxu(tree.root))</span><br><span class="line">print(&quot;中序:&quot;)</span><br><span class="line">print(tree.zhongxu(tree.root))</span><br><span class="line">print(&quot;后序:&quot;)</span><br><span class="line">root = tree.preMidToHou([0,1,3,7,8,4,9,2,5,6],[7,3,8,1,9,4,0,5,2,6])</span><br><span class="line">print(tree.houxu(root))</span><br><span class="line"></span><br><span class="line">print(&quot;\n已知二叉树后序遍历和中序遍历，求前序:&quot;)</span><br><span class="line">print(&quot;后序:&quot;)</span><br><span class="line">print(tree.houxu(tree.root))</span><br><span class="line">print(&quot;中序:&quot;)</span><br><span class="line">print(tree.zhongxu(tree.root))</span><br><span class="line">print(&quot;前序:&quot;)</span><br><span class="line">root = tree.preMidToHou([7,3,8,1,9,4,0,5,2,6],[7,8,3,9,4,1,5,6,2,0])</span><br><span class="line">print(tree.xianxu(root))</span><br></pre></td></tr></table></figure>
+<p>运行结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">二叉树的先序遍历:</span><br><span class="line">0 1 3 7 8 4 9 2 5 6 None</span><br><span class="line"></span><br><span class="line">二叉树的中序遍历:</span><br><span class="line">7 3 8 1 9 4 0 5 2 6 None</span><br><span class="line"></span><br><span class="line">二叉树的后序遍历:</span><br><span class="line">7 8 3 9 4 1 5 6 2 0 None</span><br><span class="line"></span><br><span class="line">二叉树的层次遍历</span><br><span class="line">0 1 2 3 4 5 6 7 8 9 None</span><br><span class="line"></span><br><span class="line">二叉树的叶子节点为:</span><br><span class="line">5</span><br><span class="line"></span><br><span class="line">已知二叉树先序遍历和中序遍历，求后序:</span><br><span class="line">先序:</span><br><span class="line">0  1  3  7  8  4  9  2  5  6  None</span><br><span class="line">中序:</span><br><span class="line">7  3  8  1  9  4  0  5  2  6  None</span><br><span class="line">后序:</span><br><span class="line">1  3  7  8  4  9  0  5  2  6  None</span><br><span class="line"></span><br><span class="line">已知二叉树后序遍历和中序遍历，求前序:</span><br><span class="line">后序:</span><br><span class="line">7  8  3  9  4  1  5  6  2  0  None</span><br><span class="line">中序:</span><br><span class="line">7  3  8  1  9  4  0  5  2  6  None</span><br><span class="line">前序:</span><br><span class="line">0  1  3  7  8  4  9  6  2  5  None</span><br></pre></td></tr></table></figure></p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2017/11/13/数据结构/数据结构算法之二叉树/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2017/11/13/数据结构/数据结构算法之二叉树/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+
+
+
+ 	
+</html>

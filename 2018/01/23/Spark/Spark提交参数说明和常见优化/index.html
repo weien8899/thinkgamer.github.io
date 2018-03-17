@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="bookmark"  type="image/x-icon"  href="img/favicon.ico"/>
+	<link rel="shortcut icon" href="img/favicon.ico">
+	
+			    <title>
+    文艺与Code | Thinkgamer的博客
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Thinkgamer Hadoop 数据挖掘 机器学习 深度学习 IT网站 博客" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Thinkgamer</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/夏未眠/">夏未眠</a></li><li><a class="category-link" href="/categories/技术篇/">技术篇</a></li><li><a class="category-link" href="/categories/随手记/">随手记</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/cooperation/" title="商务合作">
+		                商务合作
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/thinkgamer" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Spark提交参数说明和常见优化</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>最近在搞一个价格分类模型，虽说是分类，用的是kmeans算法，求出聚类中心，对每个价格进行级别定级。虽然说起来简单，但做起来却是并没有那么容易，不只是因为数据量大，在执行任务时要不是效率问题就是shuffle报错等。但在这整个过程中对scala编程,Spark rdd 机制，以及海量数据背景下对算法的认知都有很大的提升，这一篇文章主要是总结一些Spark在shell 终端提交jar包任务的时候的相关知识，在后续文章会具体涉及到相关的”实战经历“。<br><a id="more"></a></p>
+<h1 id="对Spark的认识"><a href="#对Spark的认识" class="headerlink" title="对Spark的认识"></a>对Spark的认识</h1><p>由于之前接触过Hadoop，对Spark也是了解一些皮毛，但中间隔了好久才重新使用spark，期间也产生过一些错误的认识。</p>
+<p>之前觉得MapReduce耗费时间，写一个同等效果的Spark程序很快就能执行完，很长一段时间自己都是在本地的单机环境进行测试学习，所以这种错误的认知就会更加深刻，但事实却并非如此，MR之所以慢是因为每一次操作数据都写在了磁盘上，大量的IO造成了时间和资源的浪费，但是Spark是基于内存的计算引擎，相比MR，减少的是大量的IO，但并不是说给一个Spark程序足够的资源，就可以为所欲为了，在提交一个spark程序时，不仅要考虑所在资源队列的总体情况，还要考虑代码本身的高效性，要尽量避免大量的shuffle操作和action操作，尽量使用同一个rdd。</p>
+<p>会用spark，会调api和能用好spark是两回事，在进行开发的过程中，不仅要了解运行原理，还要了解业务，将合适的方法和业务场景合适的结合在一起，才能发挥最大的价值。</p>
+<h1 id="spark-submit"><a href="#spark-submit" class="headerlink" title="spark-submit"></a>spark-submit</h1><p>进入spark的home目录，执行以下命令查看帮助<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/spark-submit --help</span><br></pre></td></tr></table></figure></p>
+<p>spark提交任务常见的两种模式<br>1：local/local[K]</p>
+<ul>
+<li>本地使用一个worker线程运行spark程序</li>
+<li>本地使用K个worker线程运行spark程序</li>
+</ul>
+<p>此种模式下适合小批量数据在本地调试代码</p>
+<p>2：yarn-client/yarn-cluster</p>
+<ul>
+<li>yarn-client：以client方式连接到YARN集群，集群的定位由环境变量HADOOP_CONF_DIR定义，该方式driver在client运行。</li>
+<li>yarn-cluster：以cluster方式连接到YARN集群，集群的定位由环境变量HADOOP_CONF_DIR定义，该方式driver也在集群中运行。</li>
+</ul>
+<p>注意：若使用的是本地文件需要在file路径前加：file://</p>
+<p>在提交任务时的几个重要参数</p>
+<ul>
+<li>executor-cores —— 每个executor使用的内核数，默认为1</li>
+<li>num-executors —— 启动executors的数量，默认为2</li>
+<li>executor-memory —— executor内存大小，默认1G</li>
+<li>driver-cores —— driver使用内核数，默认为1</li>
+<li>driver-memory —— driver内存大小，默认512M</li>
+</ul>
+<p>下边给一个提交任务的样式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">spark-submit \</span><br><span class="line">  --master local[5]  \</span><br><span class="line">  --driver-cores 2   \</span><br><span class="line">  --driver-memory 8g \</span><br><span class="line">  --executor-cores 4 \</span><br><span class="line">  --num-executors 10 \</span><br><span class="line">  --executor-memory 8g \</span><br><span class="line">  --class PackageName.ClassName XXXX.jar \</span><br><span class="line">  --name &quot;Spark Job Name&quot; \</span><br><span class="line">  InputPath      \</span><br><span class="line">  OutputPath</span><br><span class="line">  </span><br><span class="line">如果这里通过--queue 指定了队列，那么可以免去写--master</span><br></pre></td></tr></table></figure></p>
+<p>以上就是通过spark-submit来提交一个任务</p>
+<h1 id="几个参数的常规设置"><a href="#几个参数的常规设置" class="headerlink" title="几个参数的常规设置"></a>几个参数的常规设置</h1><ul>
+<li><p>executor_cores*num_executors<br>表示的是能够并行执行Task的数目<br>不宜太小或太大！一般不超过总队列 cores 的 25%，比如队列总 cores 400，最大不要超过100，最小不建议低于 40，除非日志量很小。</p>
+</li>
+<li><p>executor_cores<br>不宜为1！否则 work 进程中线程数过少，一般 2~4 为宜。</p>
+</li>
+<li><p>executor_memory<br>一般 6~10g 为宜，最大不超过20G，否则会导致GC代价过高，或资源浪费严重。</p>
+</li>
+<li><p>driver-memory<br>driver 不做任何计算和存储，只是下发任务与yarn资源管理器和task交互，除非你是 spark-shell，否则一般 1-2g</p>
+</li>
+</ul>
+<hr>
+<p>增加每个executor的内存量，增加了内存量以后，对性能的提升，有三点：</p>
+<ul>
+<li>1、如果需要对RDD进行cache，那么更多的内存，就可以缓存更多的数据，将更少的数据写入磁盘，<br>甚至不写入磁盘。减少了磁盘IO。</li>
+<li>2、对于shuffle操作，reduce端，会需要内存来存放拉取的数据并进行聚合。如果内存不够，也会写入磁盘。如果给executor分配更多内存以后，就有更少的数据，需要写入磁盘，甚至不需要写入磁盘。减少了磁盘IO，提升了性能。</li>
+<li>3、对于task的执行，可能会创建很多对象。如果内存比较小，可能会频繁导致JVM堆内存满了，然后频繁GC，垃圾回收，minor GC和full GC。（速度很慢）。内存加大以后，带来更少的GC，垃圾回收，避免了速度变慢，性能提升。</li>
+</ul>
+<h1 id="常规注意事项"><a href="#常规注意事项" class="headerlink" title="常规注意事项"></a>常规注意事项</h1><ul>
+<li>预处理数据，丢掉一些不必要的数据</li>
+<li>增加Task的数量</li>
+<li>过滤掉一些容易导致发生倾斜的key</li>
+<li>避免创建重复的RDD</li>
+<li>尽可能复用一个RDD</li>
+<li>对多次使用的RDD进行持久化</li>
+<li>尽量避免使用shuffle算子</li>
+<li>在要使用groupByKey算子的时候,尽量用reduceByKey或者aggregateByKey算子替代.因为调用groupByKey时候,按照相同的key进行分组,形成RDD[key,Iterable[value]]的形式,此时所有的键值对都将被重新洗牌,移动,对网络数据传输造成理论上的最大影响.</li>
+<li>使用高性能的算子</li>
+</ul>
+<hr>
+<p>参考：<br>1：<a href="http://www.cnblogs.com/haozhengfei/p/e570f24c43fa15f23ebb97929a1b7fe6.html" target="_blank" rel="external">http://www.cnblogs.com/haozhengfei/p/e570f24c43fa15f23ebb97929a1b7fe6.html</a><br>2：<a href="https://www.jianshu.com/p/4c584a3bac7d" target="_blank" rel="external">https://www.jianshu.com/p/4c584a3bac7d</a></p>
+<center>
+    <img src="http://img.blog.csdn.net/20171231111930492?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvR2FtZXJfZ3l0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+    <br>
+打开微信扫一扫，关注公众号【数据与算法联盟】
+</center>
+
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/01/23/Spark/Spark提交参数说明和常见优化/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2018/01/23/Spark/Spark提交参数说明和常见优化/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+
+
+
+ 	
+</html>

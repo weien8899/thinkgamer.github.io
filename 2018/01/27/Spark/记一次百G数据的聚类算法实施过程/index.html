@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="bookmark"  type="image/x-icon"  href="img/favicon.ico"/>
+	<link rel="shortcut icon" href="img/favicon.ico">
+	
+			    <title>
+    文艺与Code | Thinkgamer的博客
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Thinkgamer Hadoop 数据挖掘 机器学习 深度学习 IT网站 博客" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Thinkgamer</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/夏未眠/">夏未眠</a></li><li><a class="category-link" href="/categories/技术篇/">技术篇</a></li><li><a class="category-link" href="/categories/随手记/">随手记</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/cooperation/" title="商务合作">
+		                商务合作
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/thinkgamer" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >记一次百G数据的聚类算法实施过程</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>如题，记一次百G数据的聚类算法实施过程，用的技术都不难，spark和kmeans，我想你会认为这没有什么难度，我接到这个任务的时候也认为没有难度，可是一周之后我发现我错了，数据量100G的确不大，但难度在于我需要对 kmeans 的 train过程执行将近3000次，而且需要高效的完成。那么问题就来了，如何保证高效和准确性。（声明小编对Spark也不是说很熟悉）</p>
+<a id="more"></a>
+<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>数据格式为三列，第一列为类别ID，第二列为商品ID，第三列为价格，数据格式如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1000    2000    45.3</span><br><span class="line">1000    2001    121.3</span><br><span class="line">1001    2002    4125.3</span><br><span class="line">1000    2003    225.3</span><br><span class="line">1001    2004    3415.3</span><br><span class="line">1000    2005    12245.3   </span><br><span class="line">...     ...     ....</span><br></pre></td></tr></table></figure></p>
+<p>数据有很多条，数据量为将近100G，存储在hdfs上，第一列品类ID不唯一，每个品类ID下有多个商品ID，商品ID唯一，价格为浮点型数据</p>
+<p>现在要对每个品类下的价格进行聚类，得到1~7个价格level（7level的价格要比6level的价格高，以此类推）</p>
+<h1 id="第一次尝试"><a href="#第一次尝试" class="headerlink" title="第一次尝试"></a>第一次尝试</h1><p>第一次尝试很天真，思路也很正常，如下：<br>1：全量加载数据，形成rdd<br>2：数据split之后，按key进行groupby<br>3：针对每个key（也就是类别ID）进行kmeans聚类和预测，并将结果写入hdfs<br>4：加载每个类别的结果，进行聚合形成最终结果</p>
+<p>那么开始写代码。papapa写了一堆，发现groupBy之后的数据格式是CompactBuffer，转化成spark kmeans train所需要的格式之后，代码卡着不会动，不明所以（我估计是格式没有转正确，不是kmeans 所需要的格式，但是如果不是kmeans 需要的格式，应该会报错呀），后来当我把代码打包，提交到集群上运行时，提示我kmeans train所在的函数中没有指定master url，可是我明明指定了，后来才发现是因为，我在rdd操作过程中能够，嵌套了函数，函数中又重新使用了rdd，也就是说rdd 不能嵌套rdd使用，具体可参考 <a href="https://www.zhihu.com/question/54439266" target="_blank" rel="external">Spark 为什么 不允许 RDD 嵌套-如 RDD[RDD[T]]</a>，而我在本地测试时指的都是local，没有进行报错，至此这条路行不通，也就是说不能按这样的思路执行</p>
+<p>在该思路的基础上进行改进：<br>既然rdd不能嵌套rdd使用，何不先得到所有的类别id，然后在全量数据总filter单个类别id进行kmeans操作呢？</p>
+<p>该代码，测试，伪代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">leibieID_list = XXXXX</span><br><span class="line">leibieID_list.map(one =&gt; kmeans(one,path))</span><br></pre></td></tr></table></figure></p>
+<p>需要注意的是 leibieID_list.map 操作并不是分布式的，而是for 循环，这样3000个类别id运行完，时间可想而知，是极其耗时的，所以这条路也失败了（不是说行不通，是因为耗时）</p>
+<h1 id="第二次尝试"><a href="#第二次尝试" class="headerlink" title="第二次尝试"></a>第二次尝试</h1><p>经过上边的尝试发现不行，那么我想是不是先全量读取数据，然后按照类别ID，将同一个类别ID的数据写到一个文件（或者文件夹下），然后再对之操作</p>
+<p>开始写classify by ID 的代码，这里遇到了问题是如何让同一个类别ID的数据写到一个文件中，上网查了一些资料，可以参考之前整理的笔记</p>
+<p><a href="http://blog.csdn.net/gamer_gyt/article/details/79157055" target="_blank" rel="external"> Spark多路径输出和二次排序</a></p>
+<p>这里边有实现的办法，但是还有一个问题，对全量数据（100G）进行shuffle的时候，由于数据量特别大，也特别占用资源，往往会出现一些内存上的错误。</p>
+<p>这里采用的策略是将全量数据rdd进行random split，然后for循环遍历split之后的rdd，进行saveAsTestFile，保存的目录这样设计<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/path/split=0/</span><br><span class="line">/path/split=1/</span><br><span class="line">/path/split=2/</span><br><span class="line">/path/split=3/</span><br><span class="line">    ...  ...</span><br></pre></td></tr></table></figure></p>
+<p>这样的话，就可以避免大量数据 shuffle 耗费资源的问题了，而且也不影响后续数据的使用，同时这一步也会把类别id提取出来，保存在hdfs上，供下一步使用。</p>
+<p>经历了上一步的数据准备，开始step 2的开发，第二步的思路：<br>加载第一步保存的类别id list文件，分成5份，启动5个spark任务进行train，至此，思路是正确的，但却忽略了一个很严正的问题：数据倾斜</p>
+<p>由于是随机对类别 id 进行分组操作，那么不能保证没组中每个类别id对应的数据条数的大概一致性，也就是存在某个ID 数据条数只有几十条，而有些ID 数据条数千万条，这种情况下就会导致代码在运行过程中，有些task很快运行完了，有些执行了好久也没完事。</p>
+<h1 id="第三次尝试"><a href="#第三次尝试" class="headerlink" title="第三次尝试"></a>第三次尝试</h1><p>有了第二次的经验，想法就是如何将数据条数差不多的分到同一组里，我采用的方法是进行统计，按照10的X次方形式进行分组，比如说<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1~10    1</span><br><span class="line">10~100  2</span><br><span class="line">100~1000    3</span><br><span class="line">....</span><br></pre></td></tr></table></figure></p>
+<p>但是这样也有一个问题，就是这样大概符合正太分布，4、5、6这样的组里数据条数比较多，1、2、3和7、8、9这样的数据条数少，这样就会因为4、5、6组的程序运行时间较长，整体任务运行时间也较长。</p>
+<p>所以这里采用合并和拆分的策略，比如说将1,2,3合并到一组，4、5、6分别拆成两组，7、8、9合成一组，这样就会保证每组运行的时间是差不多的。（实际情况中，要根据数据的分布进行合理的拆分和合并）</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>至此，问题算是最终解决了，相比原先的MR版本，时间缩减了将近8个小时，在整个优化的过程中，其实对于经验足够的开发者来说，可能很快就会解决，但对于我们这些新手，可能就要耗费些时间，涨涨记性了，在整个过程中对spark也算是有进一步的了解了。</p>
+<p>其他的相关笔记：</p>
+<ul>
+<li><p><a href="http://blog.csdn.net/gamer_gyt/article/details/79157055" target="_blank" rel="external">http://blog.csdn.net/gamer_gyt/article/details/79157055</a></p>
+</li>
+<li><p><a href="http://blog.csdn.net/gamer_gyt/article/details/79135118" target="_blank" rel="external">http://blog.csdn.net/gamer_gyt/article/details/79135118</a></p>
+</li>
+</ul>
+<hr>
+<center>
+    <img src="http://img.blog.csdn.net/20171231111930492?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvR2FtZXJfZ3l0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+    <br>
+打开微信扫一扫，关注公众号【数据与算法联盟】
+</center>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/01/27/Spark/记一次百G数据的聚类算法实施过程/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2018/01/27/Spark/记一次百G数据的聚类算法实施过程/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+
+
+
+ 	
+</html>

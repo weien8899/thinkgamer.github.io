@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="bookmark"  type="image/x-icon"  href="img/favicon.ico"/>
+	<link rel="shortcut icon" href="img/favicon.ico">
+	
+			    <title>
+    文艺与Code | Thinkgamer的博客
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Thinkgamer Hadoop 数据挖掘 机器学习 深度学习 IT网站 博客" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Thinkgamer</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/夏未眠/">夏未眠</a></li><li><a class="category-link" href="/categories/技术篇/">技术篇</a></li><li><a class="category-link" href="/categories/随手记/">随手记</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/cooperation/" title="商务合作">
+		                商务合作
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/thinkgamer" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Spark多路径输出和二次排序</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <blockquote>
+<p>在实际应用场景中，我们对于Spark往往有各式各样的需求，比如说想MR中的二次排序，Top N，多路劲输出等。那么这篇文章我们就来看下这几个问题。</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="二次排序"><a href="#二次排序" class="headerlink" title="二次排序"></a>二次排序</h1><p>假设我们的数据是这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1   2</span><br><span class="line">1   3</span><br><span class="line">1   1</span><br><span class="line">1   6</span><br><span class="line">1   4</span><br><span class="line">2   5</span><br><span class="line">2   8</span><br><span class="line">2   3</span><br></pre></td></tr></table></figure></p>
+<p>我们想要实现第一列按降序排列，当第一列相同时，第二列按降序排列</p>
+<p>定义一个SecondSortKey类：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class SecondSortKey(val first: Int, val second: Int)</span><br><span class="line">  extends Ordered[SecondSortKey] with Serializable &#123;</span><br><span class="line">  override def compare(that: SecondSortKey): Int = &#123;</span><br><span class="line">    if (this.first - that.first == 0) &#123;</span><br><span class="line">      this.second - that.second</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      this.first - that.first</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后这样去使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">val lines = sc.textFile(&quot;test.txt&quot;)</span><br><span class="line">val pairs = lines.map &#123; x =&gt;</span><br><span class="line">      (new SecondSortKey(x.split(&quot;\\s+&quot;)(0).toInt,</span><br><span class="line">        x.split(&quot;\\s+&quot;)(1).toInt), x)</span><br><span class="line">    &#125;</span><br><span class="line">val sortedPairs = pairs.sortByKey(false);</span><br><span class="line">sortedPairs.map(_._2).foreach(println)</span><br></pre></td></tr></table></figure></p>
+<p>当然这里如果想按第一列升序，当第一列相同时，第二列升序的顺序排列，只需要对SecondSoryKey做如下修改即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class SecondSortKey(val first: Int, val second: Int)</span><br><span class="line">  extends Ordered[SecondSortKey] with Serializable &#123;</span><br><span class="line">  override def compare(that: SecondSortKey): Int = &#123;</span><br><span class="line">    if (this.first - that.first !== 0) &#123;</span><br><span class="line">      this.second - that.second</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      this.first - that.first</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当时使用的使用去掉<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pairs.sortByKey(false)</span><br></pre></td></tr></table></figure></p>
+<p>中的false</p>
+<h1 id="Top-N"><a href="#Top-N" class="headerlink" title="Top N"></a>Top N</h1><p>同样还是上边的数据，假设我们要得到第一列中的前五位<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">val lines = sc.textFile(&quot;test.txt&quot;)</span><br><span class="line">val rdd = lines</span><br><span class="line">        .map(x =&gt; x.split(&quot;\\s+&quot;))</span><br><span class="line">        .map(x =&gt; (x(0),x(1)))</span><br><span class="line">        .sortByKey()</span><br><span class="line">rdd.take(N).foreach(println)</span><br></pre></td></tr></table></figure></p>
+<h1 id="多路径输出"><a href="#多路径输出" class="headerlink" title="多路径输出"></a>多路径输出</h1><p>自己在使用的过程中，通过搜索发现了两种方法<br>1：调用saveAsHadoopFile函数并自定义一个OutputFormat类</p>
+<p>自定义RDDMultipleTextOutputFormat类</p>
+<p>RDDMultipleTextOutputFormat类中的generateFileNameForKeyValue函数有三个参数，key和value就是我们RDD的Key和Value，而name参数是每个Reduce的编号。本例中没有使用该参数，而是直接将同一个Key的数据输出到同一个文件中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import org.apache.hadoop.mapred.lib.MultipleTextOutputFormat  </span><br><span class="line">  </span><br><span class="line">class RDDMultipleTextOutputFormat extends MultipleTextOutputFormat[Any, Any] &#123;  </span><br><span class="line">  override def generateFileNameForKeyValue(key: Any, value: Any, name: String): String =  </span><br><span class="line">    key.asInstanceOf[String]  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>调用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sc.parallelize(List((&quot;w&quot;, &quot;www&quot;), (&quot;b&quot;, &quot;blog&quot;), (&quot;c&quot;, &quot;com&quot;), (&quot;w&quot;, &quot;bt&quot;)))  </span><br><span class="line">      .map(value =&gt; (value._1, value._2 + &quot;Test&quot;))  </span><br><span class="line">      .partitionBy(new HashPartitioner(3))  </span><br><span class="line">      .saveAsHadoopFile(&quot;/iteblog&quot;, classOf[String],classOf[String],classOf[RDDMultipleTextOutputFormat])</span><br></pre></td></tr></table></figure></p>
+<p>这里的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new HashPartitioner(3)</span><br></pre></td></tr></table></figure></p>
+<p>中的3是有key的种类决定的，当然在实际应用场景中，我们可能并不知道有多少k，这个时候就可以通过一个rdd 的 distinct操作来得到唯一key的数目。</p>
+<p>2：使用dataframe<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">people_rdd = sc.parallelize([(1, &quot;alice&quot;), (1, &quot;bob&quot;), (2,&quot;charlie&quot;)])</span><br><span class="line">people_df = people_rdd.toDF([&quot;number&quot;, &quot;name&quot;])</span><br><span class="line">people_df.write.partitionBy(&quot;number&quot;).format(&quot;text&quot;).save(path  )</span><br></pre></td></tr></table></figure></p>
+<p>当然这两种方法都有一个缺陷，就是当数据量特别大的时候，数据在repartition的过程中特别耗费资源，也会容易出现任务failed的情况，小编采用的解决办法是，适当的对原rdd进行split，然后遍历每个rdd，进行multioutput操作</p>
+<p>形似如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">val rdd = sc.textFile(input)</span><br><span class="line">var split_rdd = rdd.randomSplit(Array(1.0,1.0,1.0,1.0))</span><br><span class="line">for (one &lt;- Array(1,2,3,4))</span><br><span class="line">&#123;</span><br><span class="line">    split_rdd(one)XXXX</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>参考：</p>
+<ul>
+<li><a href="https://andone1cc.github.io/2017/03/04/Spark/%E4%BA%8C%E6%AC%A1%E6%8E%92%E5%BA%8Ftopn/" target="_blank" rel="external">Spark学习笔记——二次排序，TopN，TopNByGroup</a></li>
+<li><a href="https://www.iteblog.com/archives/1281.html" target="_blank" rel="external">Spark多文件输出(MultipleOutputFormat)</a></li>
+<li><a href="https://code.i-harness.com/en/q/16e22a0" target="_blank" rel="external">scala - Write to multiple outputs by key Spark - one Spark job</a></li>
+<li><a href="https://stackoverflow.com/questions/23995040/write-to-multiple-outputs-by-key-spark-one-spark-job/26051042#26051042" target="_blank" rel="external">Write to multiple outputs by key Spark - one Spark job
+</a></li>
+</ul>
+<hr>
+<center>
+<img src="http://img.blog.csdn.net/20171231121058707?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvR2FtZXJfZ3l0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<br>
+打开微信扫一扫，关注微信公众号【数据与算法联盟】 
+</center>
+
+<p>转载请注明出处：<a href="http://blog.csdn.net/gamer_gyt" target="_blank" rel="external">http://blog.csdn.net/gamer_gyt</a><br>博主微博：<a href="http://weibo.com/234654758" target="_blank" rel="external">http://weibo.com/234654758</a><br>Github：<a href="https://github.com/thinkgamer" target="_blank" rel="external">https://github.com/thinkgamer</a></p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/01/25/Spark/Spark多路径输出和二次排序/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2018/01/25/Spark/Spark多路径输出和二次排序/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+
+
+
+ 	
+</html>
