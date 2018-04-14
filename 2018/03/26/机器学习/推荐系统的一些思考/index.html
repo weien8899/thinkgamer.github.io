@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="bookmark"  type="image/x-icon"  href="img/favicon.ico"/>
+	<link rel="shortcut icon" href="img/favicon.ico">
+	
+			    <title>
+    文艺与Code | Thinkgamer的博客
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Thinkgamer Hadoop 数据挖掘 机器学习 深度学习 IT网站 博客" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Thinkgamer</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/数据计算/">数据计算</a></li><li><a class="category-link" href="/categories/机器学习/">机器学习</a></li><li><a class="category-link" href="/categories/编程珠玑/">编程珠玑</a></li><li><a class="category-link" href="/categories/这夏未眠/">这夏未眠</a></li><li><a class="category-link" href="/categories/随手记/">随手记</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/cooperation/" title="商务合作">
+		                商务合作
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/thinkgamer" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/images/thumbs/ml12.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >推荐系统的一些思考</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <blockquote>
+<p>推荐系统一直以来都是电商网站必不可少的一项，在提升用户转化，增加GMV方面可谓功不可没，那么一个好的推荐算法必然会创造更大的价值，刚好最近听了一个关于推荐算法的讲座，写出来一些思考吧，算是分享一下。</p>
+</blockquote>
+<h1 id="学术界的推荐系统"><a href="#学术界的推荐系统" class="headerlink" title="学术界的推荐系统"></a>学术界的推荐系统</h1><p>其实在大学期间也看过一些推荐的算法，还帮别人实现过关于推荐系统的毕设，但终究都是停留在协同过滤的层面，顶多是加了一些热门推荐来防止冷启动。不得不说，协同过滤打开了我对推荐系统认知的大门，当然在真实环境中这是远远不够的。</p>
+<p>传统的推荐系统无非就是评分和排序两种方案，评分即计算出用户对item的可能评分，根据评分的高低进行排序，排序则不关心具体的评分是多少，只是为了得到一个顺序（其实这一点和推荐系统即为相似）。传统的推荐算法典型的有协同过滤和基于内容的过滤。如果你不明白什么是协同过滤算法可以参考：<a href="https://blog.csdn.net/gamer_gyt/article/details/51346159" target="_blank" rel="external">https://blog.csdn.net/gamer_gyt/article/details/51346159</a> ,如果你不知道协同过滤与基于内容的过滤的区别可参考：<a href="https://www.zhihu.com/question/19971859。" target="_blank" rel="external">https://www.zhihu.com/question/19971859。</a></p>
+<p>大学数学术界关于推荐算法的论文都是对协同过滤的改进，而最终得到一个相对于原先的算法有很大的提升的结果，但是这些都过于理想化了，真实的环境远比实验要复杂的多，网上最有名的推荐系统数据集莫过于那个电影评分数据了，里边只有用户对电影的评分，和电影的一些信息数据。建立在这些数据上的推荐算法其实有点理想化了，他并不能模拟出真实的电商环境，数据的缺乏也是导致协同过滤算法大行其道的原因。</p>
+<h1 id="工业界的推荐系统"><a href="#工业界的推荐系统" class="headerlink" title="工业界的推荐系统"></a>工业界的推荐系统</h1><p>工业界的推荐系统，需要的是明确的价值走向，比如说电商网站的推荐系统是为了增加交易总额，那么在进行推荐的时候是不是应该适当过滤一些极其廉价的商品，是否应该根据用户对不同价格段的需求进行不同价格段商品的推送；如果电商的推荐系统是为了增加用户停留时间，提交CTR，那么推荐系统就不应该考虑过多别的因素，只找到用户最感兴趣的商品或者评论等，当然如何找到用户最感兴趣的也是一个问题，但是有一点不可否认的是这些如果用传统的协同过滤来做是很难满足需求的。这时候就需要开发出新的推荐架构，来适应不同的需求。</p>
+<p>目前工业界用的最多的算法莫过于GBDT，LR，DNN等，但所有的推荐算法都会面临一个海量数据的情况，这个时候的做法便是对数据集进行数据召回，得到用户比较感兴趣的一些数据，然后再根据我们的推荐模型进行素材偏好度排序，过滤掉用户已经购买过的类别数据，继而推送给用户。</p>
+<p>那么如何进行数据召回呢？这就需要一些基础的模型进行数据准备，比如说用户肖像，用户的价格段偏好，用户购买力水平等。根绝已有的用户数据和特征进行数据召回，适度拉取一些新的数据，保证召回结果的多样性，得到召回池数据之后，便是对模型的训练，其实模型本身难度不大，难度大的是如何选取有效的特征来作为模型的输入数据。你组合得到的有效特征越多，对于模型的训练结果就越准确。</p>
+<h1 id="推荐系统的多样性"><a href="#推荐系统的多样性" class="headerlink" title="推荐系统的多样性"></a>推荐系统的多样性</h1><p>如何保证推荐结果的多样性呢，首先我们要先认识到推荐的可能性，比如说电商网页首页的推荐，商品详细页面的推荐，不同年龄下的推荐，推荐的结果和被评估的指标都是不一样的。这个时候不能单一对所有情况下使用同一种算法或者特征，而是要找到能够区分出不同位置，不同年龄的推荐结果的特征，进行模型训练。</p>
+<hr>
+<center>
+    <img src="/img/gzh.jpg" weight="250px" height="250px">
+    <br>
+    打开微信扫一扫，关注微信公众号【数据与算法联盟】
+    <br>
+    <br>
+    <img src="/img/weixin.png" weight="250px" height="300px">
+    <br>
+    打开微信扫一扫，加小编好友，拉你进数据算法交流群
+
+</center>
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/03/26/机器学习/推荐系统的一些思考/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2018/03/26/机器学习/推荐系统的一些思考/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+
+
+
+ 	
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="bookmark"  type="image/x-icon"  href="img/favicon.ico"/>
+	<link rel="shortcut icon" href="img/favicon.ico">
+	
+			    <title>
+    文艺与Code | Thinkgamer的博客
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Thinkgamer Hadoop 数据挖掘 机器学习 深度学习 IT网站 博客" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Thinkgamer</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/数据计算/">数据计算</a></li><li><a class="category-link" href="/categories/机器学习/">机器学习</a></li><li><a class="category-link" href="/categories/编程珠玑/">编程珠玑</a></li><li><a class="category-link" href="/categories/这夏未眠/">这夏未眠</a></li><li><a class="category-link" href="/categories/随手记/">随手记</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/cooperation/" title="商务合作">
+		                商务合作
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/thinkgamer" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/images/thumbs/ml10.jpeg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >机器学习中的AUC理解</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <blockquote>
+<p>最近在做GBDT模型，里边用到胡模型评价方法就是AUC，刚好趁此机会，好好学习一下。</p>
+</blockquote>
+<h1 id="混淆矩阵-Confusion-matrix"><a href="#混淆矩阵-Confusion-matrix" class="headerlink" title="混淆矩阵(Confusion matrix)"></a>混淆矩阵(Confusion matrix)</h1><p>混淆矩阵是理解大多数评价指标的基础，毫无疑问也是理解AUC的基础。丰富的资料介绍着混淆矩阵的概念，下边用一个实例讲解什么是混淆矩阵</p>
+<p>如有100个样本数据，这些数据分成2类，每类50个。分类结束后得到的混淆矩阵为：<br><img src="https://img-blog.csdn.net/20180415002706538?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dhbWVyX2d5dA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p>说明：<br>40个为0类别的，预测正确，60个事实是0类别的给预测为1类别的<br>40个为1类别的，预测正确，60个事实是1类别的给预测为0类别的</p>
+<p>其对应的混淆矩阵如下：<br><img src="https://img-blog.csdn.net/2018041500331853?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dhbWVyX2d5dA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p>混淆矩阵包含四部分的信息：</p>
+<ul>
+<li>True negative(TN)，称为真阴率，表明实际是负样本预测成负样本的样本数</li>
+<li>False positive(FP)，称为假阳率，表明实际是负样本预测成正样本的样本数</li>
+<li>False negative(FN)，称为假阴率，表明实际是正样本预测成负样本的样本数</li>
+<li>True positive(TP)，称为真阳率，表明实际是正样本预测成正样本的样本数</li>
+</ul>
+<p>从上边的图可以分析出，对角线带True的为判断对了，斜对角线带False的为判断错了。</p>
+<p>像常见的准确率，精准率，召回率，F1-score，AUC都是建立在混淆矩阵上的。</p>
+<p>准确率（Accuracy）：判断正确的占总的数目的比例【（TN+TP）/100=(40+40)/100=0.8】<br>精准率（precision）：判断正确的正类占进行判断的数目的比例（针对判别结果而言的，表示预测为正的数据中有多少是真的正确）【TP/(TP+FP) = 40/(40+60 )=0.4】<br>召回率（recall）: 判断正确正类占应该应该判断正确的正类的比例（针对原样本而言，表示样本中的正例有多少被判断正确了）【TP/(TP+FN)=40/(40+60)=0.4】<br>F1-Measure：精确值和召回率的调和均值【2<em>R</em>R/(P+R)=2<em>0.4</em>0.4/(0.4+0.4)=1】</p>
+<h1 id="AUC-amp-ROC"><a href="#AUC-amp-ROC" class="headerlink" title="AUC &amp; ROC"></a>AUC &amp; ROC</h1><p>AUC是一个模型评价指标，只能用于二分类模型的评价，对于二分类模型，还有损失函数（logloss），正确率（accuracy），准确率（precision），但相比之下AUC和logloss要比accuracy和precision用的多，原因是因为很多的机器学习模型计算结果都是概率的形式，那么对于概率而言，我们就需要去设定一个阈值来判定分类，那么这个阈值的设定就会对我们的正确率和准确率造成一定成都的影响。</p>
+<p>AUC(Area under Curve)，表面上意思是曲线下边的面积，这么这条曲线是什么？——ROC曲线（receiver operating characteristic curve，接收者操作特征曲线）。</p>
+<p>接下来分析下面这张图（图片来自百度百科）：<br><img src="https://img-blog.csdn.net/20180415015350726?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dhbWVyX2d5dA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p>X轴是假阳率：FP/(FP+TN)<br>Y轴是真阳性：TP(TP+FN)<br>ROC曲线给出的是当阈值(分类器必须提供每个样例被判为阳性或者阴性的可信程度值)变化时假阳率和真阳率的变化情况，左下角的点所对应的是将所有样例判为反例的情况，而右上角的点对应的则是将所有样例判断为正例的情况。<br>ROC曲线不但可以用于比较分类器，还可以基于成本效益分析来做出决策。在理想情况下，最佳的分类器应该尽可能地处于左上角，这就意味着分类器在假阳率很低的同时获得了很高的真阳率。</p>
+<h1 id="AUC计算"><a href="#AUC计算" class="headerlink" title="AUC计算"></a>AUC计算</h1><p>以下部分引用 <a href="https://blog.csdn.net/guohecang/article/details/52858019" target="_blank" rel="external">ROC曲线与AUC计算</a> 中的举例</p>
+<hr>
+<p>假设有6次展示记录，有两次被点击了，得到一个展示序列（1:1,2:0,3:1,4:0,5:0,6:0），前面的表示序号，后面的表示点击（1）或没有点击（0）。<br>然后在这6次展示的时候都通过model算出了点击的概率序列。</p>
+<p>下面看三种情况。</p>
+<p>一、如果概率的序列是（1:0.9,2:0.7,3:0.8,4:0.6,5:0.5,6:0.4）。与原来的序列一起，得到序列（从概率从高到低排）<br>1 0.9<br>1 0.8<br>0 0.7<br>0 0.6<br>0 0.5<br>0 0.4<br>绘制的步骤是：<br>1）把概率序列从高到低排序，得到顺序（1:0.9,3:0.8,2:0.7,4:0.6,5:0.5,6:0.4）；<br>2）从概率最大开始取一个点作为正类，取到点1，计算得到TPR=0.5，FPR=0.0；<br>3）从概率最大开始，再取一个点作为正类，取到点3，计算得到TPR=1.0，FPR=0.0；<br>4）再从最大开始取一个点作为正类，取到点2，计算得到TPR=1.0，FPR=0.25;<br>5）以此类推，得到6对TPR和FPR。<br>然后把这6对数据组成6个点(0,0.5),(0,1.0),(0.25,1),(0.5,1),(0.75,1),(1.0,1.0)。<br>这6个点在二维坐标系中能绘出来。<br><img src="https://img-blog.csdn.net/20180415024426171?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dhbWVyX2d5dA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>看看图中，那个就是ROC曲线。</p>
+<p>二、如果概率的序列是（1:0.9,2:0.8,3:0.7,4:0.6,5:0.5,6:0.4）。与原来的序列一起，得到序列（从概率从高到低排）<br>1 0.9<br>0 0.8<br>1 0.7<br>0 0.6<br>0 0.5<br>0 0.4<br>绘制的步骤是：<br>6）把概率序列从高到低排序，得到顺序（1:0.9,2:0.8,3:0.7,4:0.6,5:0.5,6:0.4）；<br>7）从概率最大开始取一个点作为正类，取到点1，计算得到TPR=0.5，FPR=0.0；<br>8）从概率最大开始，再取一个点作为正类，取到点2，计算得到TPR=0.5，FPR=0.25；<br>9）再从最大开始取一个点作为正类，取到点3，计算得到TPR=1.0，FPR=0.25;<br>10）     以此类推，得到6对TPR和FPR。<br>然后把这6对数据组成6个点(0,0.5),(0.25,0.5),(0.25,1),(0.5,1),(0.75,1),(1.0,1.0)。<br>这6个点在二维坐标系中能绘出来。<br><img src="https://img-blog.csdn.net/20180415024524722?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dhbWVyX2d5dA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>看看图中，那个就是ROC曲线。</p>
+<p>三、如果概率的序列是（1:0.4,2:0.6,3:0.5,4:0.7,5:0.8,6:0.9）。与原来的序列一起，得到序列（从概率从高到低排）<br>0 0.9<br>0 0.8<br>0 0.7<br>0 0.6<br>1 0.5<br>1 0.4<br>绘制的步骤是：<br>11）把概率序列从高到低排序，得到顺序（1:0.4,2:0.6,3:0.5,4:0.7,5:0.8,6:0.9）；<br>12）从概率最大开始取一个点作为正类，取到点6，计算得到TPR=0.0，FPR=0.25；<br>13）从概率最大开始，再取一个点作为正类，取到点5，计算得到TPR=0.0，FPR=0.5；<br>14）再从最大开始取一个点作为正类，取到点4，计算得到TPR=0.0，FPR=0.75;<br>15）以此类推，得到6对TPR和FPR。<br>然后把这6对数据组成6个点(0.25,0.0),(0.5,0.0),(0.75,0.0),(1.0,0.0),(1.0,0.5),(1.0,1.0)。<br>这6个点在二维坐标系中能绘出来。<br><img src="https://img-blog.csdn.net/20180415024654878?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dhbWVyX2d5dA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>看看图中，那个就是ROC曲线</p>
+<p>意义：<br>如上图的例子，总共6个点，2个正样本，4个负样本，取一个正样本和一个负样本的情况总共有8种。</p>
+<p>上面的第一种情况，从上往下取，无论怎么取，正样本的概率总在负样本之上，所以分对的概率为1，AUC=1。再看那个ROC曲线，它的积分是什么？也是1，ROC曲线的积分与AUC相等。</p>
+<p>上面第二种情况，如果取到了样本2和3，那就分错了，其他情况都分对了；所以分对的概率是0.875，AUC=0.875。再看那个ROC曲线，它的积分也是0.875，ROC曲线的积分与AUC相等。</p>
+<p>上面的第三种情况，无论怎么取，都是分错的，所以分对的概率是0，AUC=0.0。再看ROC曲线，它的积分也是0.0，ROC曲线的积分与AUC相等。</p>
+<p>很牛吧，其实AUC的意思是——Area Under roc Curve，就是ROC曲线的积分，也是ROC曲线下面的面积。</p>
+<p>绘制ROC曲线的意义很明显，不断地把可能分错的情况扣除掉，从概率最高往下取的点，每有一个是负样本，就会导致分错排在它下面的所有正样本，所以要把它下面的正样本数扣除掉（1-TPR，剩下的正样本的比例）。总的ROC曲线绘制出来了，AUC就定了，分对的概率也能求出来了。</p>
+<hr>
+<center>
+    <img src="/img/gzh.jpg" weight="250px" height="250px">
+    <br>
+    打开微信扫一扫，关注微信公众号【数据与算法联盟】
+    <br>
+    <br>
+    <img src="/img/weixin.png" weight="250px" height="300px">
+    <br>
+    打开微信扫一扫，加小编好友，拉你进数据算法交流群
+
+</center>
+
+
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/04/15/机器学习/机器学习中的AUC理解/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2018/04/15/机器学习/机器学习中的AUC理解/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+
+
+
+ 	
+</html>
